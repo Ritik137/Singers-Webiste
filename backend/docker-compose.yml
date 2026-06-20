@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+
+  api-gateway:
+    build: ./services/api-gateway
+    ports:
+      - "8000:8000"
+
+  auth-service:
+    build: ./services/auth-service
+    ports:
+      - "5001:5001"
+    env_file:
+      - ./services/auth-service/.env
+
+  admin-service:
+    build: ./services/admin-service
+    ports:
+      - "5008:5008"
+
+  song-service:
+    build: ./services/song-service
+    ports:
+      - "5002:5002"
+
+  album-service:
+    build: ./services/album-service
+    ports:
+      - "5003:5003"
+
+  video-service:
+    build: ./services/video-service
+    ports:
+      - "5004:5004"
+
+  gallery-service:
+    build: ./services/gallery-service
+    ports:
+      - "5005:5005"
+
+  contact-service:
+    build: ./services/contact-service
+    ports:
+      - "5006:5006"
+
+  notification-service:
+    build: ./services/notification-service
+    ports:
+      - "5007:5007"
